@@ -1,0 +1,54 @@
+para crear el servidor web
+npm init --yes (crea el archivo package.json)
+
+- instalar las dependencias
+  npm i express --save 
+
+  hacer lo mismo con: express-handlebars moongose morgan multer fs-extra errorhandler md5
+
+    express-> servidor web
+    express-handlebars -> para manejo de funciones en el html
+    moongose-> manejar acciones sobre mongodb
+    morgan-> para el servidor. peticiones del servidor. ver el registro de lo que el usuario pide
+    multer-> para subir imágenes
+    fs-extra-> manejo de ficheros con async y promesas
+    errorhandler-> manejo de errores en las rutas
+    md5-> cifrado. ayuda para gravatar
+    moment-> para menejo de tiempos y conversion de tiempos
+
+    *el comando save permite guardar una sección de dependencias en el archivo package.json
+
+
+- crear directorios
+    creo una carpeta src desde la raíz
+    dentro de src crear -> index.js (raiz del proyecto)-> desde acá se llama a la carpeta server
+    
+    - ubicados en la carpeta src, puedo crear carpetas y directorios desde la consola por medio del siguiente comando:
+    mkdir controllers helpers ..
+    controllers-> funciones que se encargan de hacer determinada tarea
+    helpers-> crear bloques de código reutilizables
+    models-> crear los modelos de datos
+    public-> archivos del cual el usuario puedetener acceso desde el navegador-> css, js
+    routes-> desde acá se definen las urls del servidor
+    server-> configurar la lógica del servidor
+    views-> vistas que el usuario observará en pantalla-> html
+
+EJECUTAR PROYECTO (Ubicarse en la raiz del proyecto)
+node src/index.js
+
+- iniciar un servicio de mongo db 
+(para instalar mongo db linux mint-> https://linuxforever.info/2017/04/13/how-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04/)
+    sudo service mongod start
+    usar el cliente de mongodb (desde la consola)-> mongo
+
+*comando de ejecucion al configurar modo dev
+npm run dev
+    
+- ALGUNOS COMANDOS DE MONGODB
+* mongo -> entrar a la consola de mongo (el cliente)
+* _____ -> insertar el nombre de la bd para entrar
+* show dbs -> mostrar bases de datos
+* use ____ -> ____ es el nombre de la base de datos
+    * show collections -> las colecciones de la bd (como las tablas en las sql)
+    * db.namecolection.find() -> busca las instancias de esa coleccion
+    * db.namecolection.find().pretty() -> pretty es para mostrar mas ordenado el resultado

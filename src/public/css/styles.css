@@ -1,0 +1,45 @@
+body{
+    background: #f5f0e3;
+}
+
+.navbar-brand img{
+    width: 50%;
+}
+
+.card-subir_imagen{
+    background: #40bfc1;
+}
+
+.card-subidas-recientemente{
+    background: #40bfc1;
+}
+
+.modificar-tamaño-img-recent{
+    width: 100%;
+    height: 100%;
+    border-radius: 1px;
+}
+
+.card-img-detail{
+    display: flex;
+}
+
+.lista_comentarios{
+    background: white;
+}
+
+.stats{
+    background: #40bfc1;
+}
+
+.imagenes_populares{
+    background: #40bfc1;
+}
+
+.comentarios_recientes{
+    background: #40bfc1;
+}
+
+.imagen_asociada{
+    width: 70%;
+}

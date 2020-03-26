@@ -1,0 +1,69 @@
+<div class="card">
+
+    <div class="card-header card-subir_imagen">
+        <h3 class="card-title text-black">
+            <i class="far fa-image"></i> Subir una Imagen
+        </h3>
+    </div>
+
+    <div class="card-body">
+
+        <!-- /images es la ruta que se configuro en el archivo index de la carpeta routes-->
+        <!-- Formulario para subir imagenes-->
+        <!-- enctype="multipart/form-data" -> se van a enviar datos de tipo img (pesados) -->
+        <form action="/images" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="input-group">
+                    <!-- subir la imagen -->
+                    <div class="custom-file">
+                        <input type="file" name="ruta_imagen" class="custom-file-input" id="inputGroup"
+                            aria-describedby="inputGroupFileAddon" required>
+                        <label class="custom-file-label" for="inputGroupFile">Seleccione la imagen</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="titulo_de_la_imagen" class="form-control" placeholder="Título de la imagen"
+                    required>
+            </div>
+            <div class="form-group">
+                <textarea name="descripcion_de_la_imagen" rows="2" class="form-control"
+                    placeholder="Descripción de la Imagen" required></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success">
+                    <i class="fa fa-upload"></i> Sube tu Imagen
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<!--mt -> margin-top -->
+<!--imagenes subidas recientemente-->
+<div class="card mt-2">
+    <div class="card-header card-subidas-recientemente">
+        <h3><i class="far fa-images"></i> Subidas Recientemente</h3>
+    </div>
+    <div class="card-body">
+        <!--recorrer un arreglo en handlebars-->
+         <div class="row">
+            {{#each lista_de_imagenes}}
+
+                    <div class="col-md-4">
+                        <!--en el modelo Image (que es cada imagen dentro de lista_de_imagenes), se configuro la variable 
+                        uniqueId para que obtenga el nombre de la imagen sin la extension -->
+                        <a href="/images/{{uniqueId}}">
+                            <!--filename de la coleccion images, sacada en la consulta lista_de_imagenes-->
+                            <!--en vez de implementar estilos de css (usando la clase modificar-tamaño-img-recent, se podía implementar 
+                            las propiedades de boostrap class= "w-100 h-100")-->
+
+                            <img src="/public/upload/{{filename}}" alt="" class="modificar-tamaño-img-recent image-thumbail">
+                        </a>
+                    </div>
+
+            {{/each}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<!--Mostrar las 9 imagenes mas populares-->
+
+{{#if barra_lateral.popular_images}}
+    <!--mb -> margin-bottom-->
+    <div class="card mb-2">
+        <div class="card-header imagenes_populares">
+            <h5><i class="fas fa-fire"></i> Imágenes más populares</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                {{#each barra_lateral.popular_images}}
+                    <div class="col-md-4">
+                        <a href="/images/{{uniqueId}}">
+                            <img src="/public/upload/{{filename}}" alt="" class="modificar-tamaño-img-recent image-thumbail">
+                        </a>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+{{/if}}
