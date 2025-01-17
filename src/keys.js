@@ -1,5 +1,3 @@
-/*Claves de acceso a cada uno de los servicios */
-
 module.exports = {
 
     database:{
@@ -7,4 +5,3 @@ module.exports = {
         
     }
 };
-/* imgfreepublic es el nombre de la base de datos */

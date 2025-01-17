@@ -1,5 +1,3 @@
-<!--Mostrar los 5 comentarios recientes-->
-
 {{#if barra_lateral.comments}}
     <div class="card mb-2">
         <div class="card-header comentarios_recientes">
@@ -9,13 +7,11 @@
             {{#each barra_lateral.comments}}
                 <div class="row">
 
-                    <!--Para poner la img relacionada al comentario-->
                     <div class="col">
                         <a href="/images/{{imagen_asociada.uniqueId}}">
                             <img src="/public/upload/{{imagen_asociada.filename}}" class="img-thumnail imagen_asociada">
                         </a>
                     </div>
-                    <!--Para poner el comentario-->
                     <div class="col">
                         <blockquote class="w-100">
                             <p>{{comment}}</p>

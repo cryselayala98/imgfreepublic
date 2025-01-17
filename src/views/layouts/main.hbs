@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<!--código que se va a repetir en todos los archivos vistas-->
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
    
-    <!--Boostrap 4-->
-    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
-    
-    <!--Boostwatch: boostrap con algunos mas estilos-->
     <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
     
 
-    <!--css personalizado-->
     <link rel="stylesheet" href="/public/css/styles.css">
 
     <title>ImgPublic</title>
@@ -31,33 +24,26 @@
         </div>
     </nav>
 
-    <div class="container p-4"> <!-- p-4 -> padding = 4 -->
+    <div class="container p-4">
     <div class="row">
         <div class="col-md-8">
-            <!--se agrega el layout por defecto-->
             {{{ body }}}
         </div>
 
-        <!--barras laterales-->
         <div class="col-md-4">
             
-            <!--llamar el partials de stats-->
             {{> stats}}
 
-            <!--llamar el partials de imagenes_populares-->
             {{> imagenes_populares}}
 
-            <!--llamar el partials de comentarios_recientes-->
             {{> comentarios_recientes}}
         </div>
     </div>
         
     </div>
     
-<!--Scripts-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-<!--Custom code-->
 <script src="/public/js/scripts.js"></script>
 
 </body>

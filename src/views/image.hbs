@@ -1,12 +1,6 @@
-<!-- codigo para mostrar una imagen con detalles-->
-
-<!--imagen-->
 <div class="card">
-    <!--d-flex card-img-detail justify-content-between align-items-center -> sirve para que todo el contenido 
-    se muestre en 1 sola linea uno al lado del otro-->
     <div class="card-header card-img-detail justify-content-between align-items-center">
         <h2>{{image_detail.title}}</h2>
-        <!--el data-id es para saber sobre la img si se quiere eliminar luego-->
         <button class="btn btn-danger" id="btn-delete-image" data-id="{{image_detail.uniqueId}}">
             <i class="fa fa-trash"></i> Eliminar
         </button>
@@ -14,23 +8,19 @@
     <div class="card-body">
         <p>{{image_detail.description}}</p>
         <div class="text-center">
-            <!--img-fluid -> para que la img cubra el contenedor y no se extienda mas -->
             <img src="/public/upload/{{image_detail.filename}}" alt="{{image_detail.filename}}" class="img-fluid">
         </div>
     </div>
     <div class="card-footer card-img-detail justify-content-between align-items-center">
 
-        <!--al dar clic aca, con una peticion Ajax se dara like en una peticion POST-->
         <button class="btn btn-success" id="btn-like" data-id="{{image_detail.filename}}">
             <i class="fas fa-thumbs-up"></i> Me gusta
         </button>
         <p>
-            <!--contando-likes -> con js se modifica la informacion de los likes-->
             <span class="contando-likes">{{image_detail.likes}}</span>
             <i class="fas fa-heart"></i>
         </p>
         <p>
-            <!--contando-num_vistas -> con js se modifica la informacion de los vistos-->
             <span class="contando-vistas">{{image_detail.views}}</span>
             <i class="fas fa-eye"></i>
         </p>
@@ -40,9 +30,6 @@
     </div>
 </div>
 
-<!--comentarios-->
-
-<!--mt-> margin-top-->
 <div class="card mt-2">
     <div class="card-header d-flex card-img-detail justify-content-between align-items-center">
         <h3>Comentarios</h3>
@@ -51,7 +38,6 @@
         </button>
     </div>
     <div class="card-body">
-        <!--blockquote -> permite insertar citas en bloques de contenido-->
         <blockquote id="formulario-comentar">
             <form action="/images/{{image_detail.uniqueId}}/comment" method="POST">
                 <div class="form-group">
@@ -71,17 +57,12 @@
                 </div>
             </form>
         </blockquote>
-        <!--Para listar los comentarios-->
-        <!--p -> padding-->
         <ul class="list-group p-4 lista_comentarios">
             <h5>Algunos Comentarios</h5>
             {{#each comments}}
             <li class="list-group-item">
                 <div class="row">
                     <a href="#" class="col text-center">
-                        <!--gravatar es un servicio que permite mostrar las imagenes de perfil de un correo, 
-                        en el caso de el usuario no este inscrito en gravatar, mostrara una imagen aleatoria de 
-                        la plataforma-->
                         <img src="http://gravatar.com/avatar/{{gravatar}}?d=monsterid&s=45" alt="">
                     </a>
                     <blockquote>
